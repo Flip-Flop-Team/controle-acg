@@ -1,0 +1,50 @@
+{
+  "name": "umi-next",
+  "private": true,
+  "scripts": {
+    "build": "umi build",
+    "dev": "umi dev",
+    "lint:staged": "lint-staged",
+    "postinstall": "umi g tmp"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --fix --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": "prettier -c --write ./src"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.1.0",
+    "@umijs/plugin-antd": "^0.5.1",
+    "@umijs/plugin-dva": "^0.6.5",
+    "@umijs/plugin-model": "^2.3.0",
+    "antd": "^4.2.0",
+    "dayjs": "^1.8.26",
+    "path-to-regexp": "^6.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "umi": "^3.1.2",
+    "umi-plugin-antd-icon-config": "^2.0.3",
+    "webpack-chain": "^6.4.0"
+  },
+  "devDependencies": {
+    "@umijs/fabric": "^2.0.8",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.1",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.3.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
