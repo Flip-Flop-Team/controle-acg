@@ -5,6 +5,6 @@ export const env: IEnvironment = {
   title: 'Controle ACG',
   apiUrl: 'http://localhost:8000',
   theme: {
-    '@primary-color': '#ffffff',
+    '@primary-color': '#000',
   },
 };
