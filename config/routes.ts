@@ -4,11 +4,12 @@ export default [
   },
   {
     path: '/login',
-    component: '@/pages/login',
+    component: '@/pages/authentication/Login',
   },
   {
     path: '/register-student',
-    component: '@/pages/RegisterStudent',
+    authority: [],
+    component: '@/pages/authentication/RegisterStudent',
   },
   {
     component: '@/components/not-found',
