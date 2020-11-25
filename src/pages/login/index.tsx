@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import { connect, Loading } from 'umi';
+import { connect, Loading, history } from 'umi';
 import { IUserState } from './model';
 import './index.less';
 
@@ -21,7 +21,9 @@ const Login = () => {
             label="E-mail"
             extra={
               <div style={{ width: '100%', textAlign: 'left', margin: '5px' }}>
-                <a style={{ color: '#1a73e8' }}>Não tem uma conta?</a>
+                <a onClick={() => history.push('/register-student')} style={{ color: '#1a73e8' }}>
+                  Não tem uma conta?
+                </a>
               </div>
             }
           >

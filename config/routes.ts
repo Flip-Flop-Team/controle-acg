@@ -1,6 +1,9 @@
 export default [
   {
     path: '/',
+  },
+  {
+    path: '/login',
     component: '@/pages/login',
   },
   {
