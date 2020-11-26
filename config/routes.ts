@@ -5,7 +5,8 @@ export default [
   },
   {
     path: '/register-student',
-    component: '@/pages/RegisterStudent',
+    authority: [],
+    component: '@/pages/registerStudent',
   },
   {
     path: '/',

@@ -13,6 +13,7 @@ import Acg from './components/acg';
 import Curriculo from './components/curriculo';
 import Atividade from './components/atividade';
 import Curso from './components/curso';
+import RegisterProfessor from './components/professor';
 import { IProfessorState } from './model';
 import Regra from './components/regra';
 
@@ -23,6 +24,7 @@ const Professor = () => {
     '3': <Curso />,
     '4': <Regra />,
     '5': <Atividade />,
+    '6': <RegisterProfessor />,
   });
   const [component, setComponent] = useState<ReactNode>(<Acg />);
   return (

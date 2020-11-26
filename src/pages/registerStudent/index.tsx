@@ -50,8 +50,8 @@ const RegisterStudent = (props: IRegisterStudentProps) => {
             label="Nome"
             name="nome"
             extra={
-              <div style={{ width: '100%', textAlign: 'left', margin: '5px' }}>
-                <a onClick={() => history.push('/')} style={{ color: '#1a73e8' }}>
+              <div style={{ width: '100%', textAlign: 'left', marginTop: '5px' }}>
+                <a onClick={() => history.push('/login')} style={{ color: '#1a73e8' }}>
                   Já possui uma conta?
                 </a>
               </div>
