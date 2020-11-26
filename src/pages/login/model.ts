@@ -1,4 +1,4 @@
-import { Effect, history } from 'umi';
+import { Effect, history, Reducer } from 'umi';
 import { login } from '@/services';
 import { notification } from 'antd';
 import { omit } from '@/utils/common';
@@ -7,10 +7,8 @@ import { HOUR } from '@/utils/time';
 
 export interface IUserState {
   id?: number;
-  email?: string;
-  nome?: string;
-  is_admin?: boolean;
   authorized: boolean;
+  tipo?: string;
 }
 
 interface IUserModel {
@@ -19,6 +17,9 @@ interface IUserModel {
   effects: {
     login: Effect;
     logout: Effect;
+  };
+  reducers: {
+    update: Reducer<IUserState>;
   };
 }
 
@@ -32,7 +33,11 @@ const UserModel: IUserModel = {
       const response = yield call(login, omit(payload, ['redirect']));
 
       if (response.access) {
-        setItem('session', { token: `Bearer ${response.access}` }, 12 * HOUR);
+        setItem(
+          'session',
+          { token: `Bearer ${response.access}`, id: response.id, tipo: response.tipo },
+          12 * HOUR,
+        );
 
         history.replace(payload.redirect || '/');
       } else {
@@ -53,6 +58,14 @@ const UserModel: IUserModel = {
       });
 
       history.replace('/user/login');
+    },
+  },
+  reducers: {
+    update(state, { payload }) {
+      return {
+        ...state,
+        ...payload,
+      };
     },
   },
 };

@@ -1,8 +1,5 @@
 export default [
   {
-    path: '/',
-  },
-  {
     path: '/login',
     component: '@/pages/login',
   },
@@ -11,6 +8,17 @@ export default [
     component: '@/pages/RegisterStudent',
   },
   {
-    component: '@/components/not-found',
+    path: '/',
+    component: '@/layouts/security',
+    wrappers: ['@/wrappers/token'],
+    routes: [
+      {
+        path: '/',
+        component: '@/pages/router',
+      },
+      {
+        component: '@/components/not-found',
+      },
+    ],
   },
 ];
