@@ -2,12 +2,8 @@ import { Effect, Reducer } from 'umi';
 import { get, create, update, remove } from './services';
 
 export interface IProfessorState {
-  curriculos: Record<string, any>[];
-  cursos: Record<string, any>[];
-  regras: Record<string, any>[];
-  atividades: Record<string, any>[];
-  alunos: Record<string, any>[];
   lancamentos: Record<string, any>[];
+  regras: Record<string, any>[];
 }
 
 export interface IProfessor {
@@ -25,14 +21,10 @@ export interface IProfessor {
 }
 
 const ProfessorModel: IProfessor = {
-  namespace: 'professor',
+  namespace: 'aluno',
   state: {
-    curriculos: [],
-    cursos: [],
-    regras: [],
-    atividades: [],
-    alunos: [],
     lancamentos: [],
+    regras: [],
   },
 
   effects: {

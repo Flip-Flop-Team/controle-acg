@@ -1,19 +1,28 @@
 import React from 'react';
-import { Row, Col, Card } from 'antd';
+import { Row, Col, Card, Tabs } from 'antd';
 import { connect, Loading } from 'umi';
+import AcgPendente from './acgPendente';
+import AcgAprovadas from './acgAprovadas';
+import AcgNegadas from './acgNegadas';
 import { IProfessorState } from '../model';
-
-// interface CurriculoProps {
-//   professor: IProfessorState;
-//   loading: boolean;
-//   dispatch: Dispatch;
-// }
 
 const Acg = () => {
   return (
     <Card title="ACG" style={{ padding: '20px' }}>
       <Row>
-        <Col>Acg</Col>
+        <Col span={24}>
+          <Tabs>
+            <Tabs.TabPane tab="Pendente" key="1">
+              <AcgPendente />
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Aprovadas" key="2">
+              <AcgAprovadas />
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Negadas" key="3">
+              <AcgNegadas />
+            </Tabs.TabPane>
+          </Tabs>
+        </Col>
       </Row>
     </Card>
   );

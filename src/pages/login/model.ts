@@ -35,7 +35,13 @@ const UserModel: IUserModel = {
       if (response.access) {
         setItem(
           'session',
-          { token: `Bearer ${response.access}`, id: response.id, tipo: response.tipo },
+          {
+            token: `Bearer ${response.access}`,
+            id: response.id,
+            tipo: response.tipo,
+            aluno: response.aluno || null,
+            professor: response.professor || null,
+          },
           12 * HOUR,
         );
 
