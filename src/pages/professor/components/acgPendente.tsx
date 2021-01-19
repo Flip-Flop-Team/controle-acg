@@ -17,7 +17,6 @@ interface IAcg {
   modalIsOpen: boolean;
   lancamento: Record<string, any>;
   url: string;
-  professorId: number;
 }
 
 class AcgPendente extends React.Component<AcgProps> {
